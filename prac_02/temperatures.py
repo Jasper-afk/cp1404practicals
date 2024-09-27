@@ -6,6 +6,7 @@ Q - Quit"""
 
 
 def main():
+    """Convert Celsius to Fahrenheit and vice versa based on user input."""
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
