@@ -10,6 +10,6 @@ for i in range(number_of_items):
     total_price += item_price
 
 if total_price > 100:
-    total_price -= (total_price * 0.1) # apply 10% discount
+    total_price *= 0.9 # Apply 10% discount
 
 print(f"Total price for {number_of_items} items is ${total_price:.2f}")

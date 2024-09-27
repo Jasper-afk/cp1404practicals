@@ -20,8 +20,6 @@ print()
 
 # Question d.
 number_of_stars = int(input("Enter a number: "))
-for i in range(number_of_stars):
-    for j in range(i + 1):
-        print("*", end="")
-    print()
+for i in range(1, number_of_stars + 1):
+    print("*" * i)
 print()
