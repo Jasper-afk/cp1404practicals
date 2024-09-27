@@ -11,6 +11,7 @@ def main():
     result = determine_score(random.randint(1, 100))
     print(f"Random score: {result}")
 
+
 def determine_score(score: float) -> str:
     """Determine the score category based on input."""
     if score < 0 or score > 100:
@@ -22,4 +23,5 @@ def determine_score(score: float) -> str:
     return "Bad"
 
 
-main()
+if __name__ == "__main__":
+    main()
