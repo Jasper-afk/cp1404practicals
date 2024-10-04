@@ -42,8 +42,6 @@ def is_valid_password(password):
     if not number_of_lower or not number_of_upper or not number_of_digit:
         return False
 
-    # TODO: if special characters are required, then check the count of those
-    # and return False if it's zero
     if IS_SPECIAL_CHARACTER_REQUIRED:
         for character in password:
             if character in SPECIAL_CHARACTERS:
