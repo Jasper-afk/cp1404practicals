@@ -27,9 +27,8 @@ print(total)
 
 # Question 4.
 
-total = 0
+total = 0.0
 with open("numbers.txt", "r") as in_file:
     for line in in_file:
-        line.strip()
-        total += int(line)
+        total += float(line)
 print(total)
