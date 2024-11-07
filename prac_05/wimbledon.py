@@ -4,20 +4,21 @@ estimated: 40 minutes
 actual: 44 minutes
 """
 
+CHAMPION_INDEX = 2
 FILENAME = "wimbledon.csv"
 
 
 def main():
     """Read data from file and print details about Wimbledon champions and their countries."""
     records = get_records(FILENAME)
-    champions_to_score, countries = process_records(records)
-    display_results(champions_to_score, countries)
+    champion_to_score, countries = process_records(records)
+    display_results(champion_to_score, countries)
 
 
-def display_results(champions_to_score, countries):
+def display_results(champion_to_score, countries):
     """Display champions, scores, and countries."""
     print("Wimbledon Champions:")
-    for champion, score in champions_to_score.items():
+    for champion, score in champion_to_score.items():
         print(champion, score)
     print(f"\nThese {len(countries)} countries have won Wimbledon:")
     print(", ".join(country for country in sorted(countries)))
@@ -25,19 +26,19 @@ def display_results(champions_to_score, countries):
 
 def process_records(records):
     """Create dictionary of champions and a set of countries."""
-    champions_to_score = {}
+    champion_to_score = {}
     countries = set()
     for record in records:
-        champions_to_score[record[2]] = champions_to_score.get(record[2], 0) + 1
+        champion_to_score[record[CHAMPION_INDEX]] = champion_to_score.get(record[CHAMPION_INDEX], 0) + 1
         countries.add(record[1])
-    return champions_to_score, countries
+    return champion_to_score, countries
 
 
 def get_records(filename) -> list:
     """Get records from given file as lists within a list."""
     records = []
     with open(filename, "r", encoding="utf-8-sig") as in_file:
-        in_file.readline()
+        in_file.readline() # remove header
         for line in in_file:
             record = line.strip().split(",")
             records.append(record)
