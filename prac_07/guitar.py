@@ -15,7 +15,6 @@ class Guitar:
         self.year = year
         self.cost = cost
 
-    # TODO: See if docstring below can be shortened.
     def __lt__(self, other):
         """Return if one Guitar object's year attribute is less than another."""
         return self.year < other.year
